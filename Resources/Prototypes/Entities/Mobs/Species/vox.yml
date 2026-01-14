@@ -218,10 +218,9 @@
   - type: Languages
     speaking:
       - Translate
-      - VoxPigin
     understood:
       - Translate
-      - VoxPigin
+    specieLanguage: VoxPigin
   #WL-Changes: Languages end
 
 - type: entity
