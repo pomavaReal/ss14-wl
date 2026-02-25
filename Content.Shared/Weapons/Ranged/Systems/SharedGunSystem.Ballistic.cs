@@ -260,7 +260,7 @@ public abstract partial class SharedGunSystem
                 {
                     ent.Comp.Entities.Add(ammoEntity.Value);
                     Containers.Insert(ammoEntity.Value, ent.Comp.Container);
-                    DirtyField(uid, ent.Comp, nameof(BallisticAmmoProviderComponent.Entities));
+                    DirtyField(ent.AsNullable(), ent.Comp, nameof(BallisticAmmoProviderComponent.Entities));
                 }
                 //WL - Autocycle end
             }
