@@ -1510,6 +1510,8 @@
   name: ninja PDA
   description: You stealthy bastard, you!
   components:
+  - type: Sprite
+    sprite: Objects/Devices/pda.rsi
   - type: Pda
     id: NinjaIDCard
   - type: Appearance
