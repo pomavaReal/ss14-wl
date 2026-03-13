@@ -36,7 +36,7 @@ names-vulp-first-male-dataset-28 = Бахтер
 names-vulp-first-male-dataset-29 = Берр
 # WL-change (Бенйамин)
 names-vulp-first-male-dataset-30 = Бенррамин
-names-vulp-first-male-dataset-31 = Бенны 
+names-vulp-first-male-dataset-31 = Бенны
 names-vulp-first-male-dataset-32 = Бертхолд
 names-vulp-first-male-dataset-33 = Блаке
 names-vulp-first-male-dataset-34 = Бо

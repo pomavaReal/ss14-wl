@@ -66,6 +66,7 @@ names-moth-last-dataset-39 = Правосудия
 names-moth-last-dataset-40 = Закона
 names-moth-last-dataset-41 = Райт
 names-moth-last-dataset-42 = Законодательства
+names-moth-last-dataset-43 = Тофу
 names-moth-last-dataset-44 = Присутствия
 names-moth-last-dataset-45 = Дар
 names-moth-last-dataset-46 = Отис

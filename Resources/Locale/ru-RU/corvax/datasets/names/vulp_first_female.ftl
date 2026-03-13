@@ -31,7 +31,7 @@ names-vulp-first-female-dataset-22 = Арне
 names-vulp-first-female-dataset-23 = Аннире
 names-vulp-first-female-dataset-24 = Ариел
 # WL-change (Аря)
-names-vulp-first-female-dataset-25 = АрА
+names-vulp-first-female-dataset-25 = Ара
 names-vulp-first-female-dataset-26 = Астраеа
 # WL-change (Астрид)
 names-vulp-first-female-dataset-27 = Астрихд
@@ -58,7 +58,7 @@ names-vulp-first-female-dataset-43 = Брооке
 # WL-change (Брунхилде)
 names-vulp-first-female-dataset-44 = Брурилда
 names-vulp-first-female-dataset-45 = Цаитлин
-names-vulp-first-female-dataset-46 = Цаллисто 
+names-vulp-first-female-dataset-46 = Цаллисто
 names-vulp-first-female-dataset-47 = Цамден
 names-vulp-first-female-dataset-48 = Цамилла
 names-vulp-first-female-dataset-49 = Цандра
@@ -90,7 +90,7 @@ names-vulp-first-female-dataset-72 = Црессида
 names-vulp-first-female-dataset-73 = Цыбеле
 names-vulp-first-female-dataset-74 = Дагмар
 names-vulp-first-female-dataset-75 = Даисы
-names-vulp-first-female-dataset-76 = Дакота 
+names-vulp-first-female-dataset-76 = Дакота
 names-vulp-first-female-dataset-77 = Дапхне
 names-vulp-first-female-dataset-78 = Дариа
 names-vulp-first-female-dataset-79 = Дарла
@@ -108,7 +108,7 @@ names-vulp-first-female-dataset-90 = Еффие
 names-vulp-first-female-dataset-91 = Еиддвен
 names-vulp-first-female-dataset-92 = Елаине
 names-vulp-first-female-dataset-93 = Елара
-names-vulp-first-female-dataset-94 = Елеанор 
+names-vulp-first-female-dataset-94 = Елеанор
 names-vulp-first-female-dataset-95 = Елиана
 names-vulp-first-female-dataset-96 = Елисе
 names-vulp-first-female-dataset-97 = Еллен
@@ -116,7 +116,8 @@ names-vulp-first-female-dataset-98 = Елса
 # WL-change (Емилиа)
 names-vulp-first-female-dataset-99 = Мириа
 names-vulp-first-female-dataset-100 = Емилы
-names-vulp-first-female-dataset-101 = Емма 
+# WL-change (Емма)
+names-vulp-first-female-dataset-101 = Емра
 names-vulp-first-female-dataset-102 = Еммие
 names-vulp-first-female-dataset-103 = Еммы
 names-vulp-first-female-dataset-104 = Естер
@@ -234,7 +235,7 @@ names-vulp-first-female-dataset-201 = Маеве
 names-vulp-first-female-dataset-202 = Мадалире
 names-vulp-first-female-dataset-203 = Маггие
 names-vulp-first-female-dataset-204 = Маиа
-names-vulp-first-female-dataset-205 = Марагарет 
+names-vulp-first-female-dataset-205 = Марагарет
 # WL-change (Маргараретхе)
 names-vulp-first-female-dataset-206 = Марагаретхе
 names-vulp-first-female-dataset-207 = Мариах

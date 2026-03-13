@@ -96,5 +96,5 @@ names-golem-name-last-dataset-95 = Философ
 names-golem-name-last-dataset-96 = Одинокогор
 names-golem-name-last-dataset-97 = Вулкан
 names-golem-name-last-dataset-98 = Смарагдостранник
-names-golem-name-last-dataset-99 = Самосплав
+names-golem-name-last-dataset-99 = Великосплав
 names-golem-name-last-dataset-100 = Бард
