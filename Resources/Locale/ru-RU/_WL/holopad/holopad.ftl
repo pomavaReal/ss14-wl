@@ -1,1 +1,1 @@
-holopad-command-adjutant = Командование — Горничная
+holopad-command-adjutant = Командование — Адъютант

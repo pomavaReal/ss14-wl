@@ -1,2 +1,2 @@
-ent-AdjutantIDCard = ID-карта горничной командования
+ent-AdjutantIDCard = ID-карта адъютанта
     .desc = { ent-IDCardStandard.desc }

@@ -1,1 +1,1 @@
-stamp-component-stamped-name-adjutant = Горничная Командования
+stamp-component-stamped-name-adjutant = Адъютант
