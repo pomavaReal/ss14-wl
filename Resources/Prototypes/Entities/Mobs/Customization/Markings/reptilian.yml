@@ -81,11 +81,13 @@
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_angler
 
+ # WL human and android with reptilian markings start
+
 - type: marking
   id: LizardHornsCurled
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Cischi]
+  speciesRestriction: [Reptilian, Cischi, Human, Android]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_curled
@@ -94,7 +96,7 @@
   id: LizardHornsRam
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Cischi]
+  speciesRestriction: [Reptilian, Cischi, Human, Android]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_ram
@@ -103,7 +105,7 @@
   id: LizardHornsShort
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Cischi]
+  speciesRestriction: [Reptilian, Cischi, Human, Android]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_short
@@ -112,10 +114,12 @@
   id: LizardHornsSimple
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Cischi]
+  speciesRestriction: [Reptilian, Cischi, Human, Android]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_simple
+
+ # WL human and android with reptilian markings end
 
 - type: marking
   id: LizardHornsDouble
@@ -126,16 +130,20 @@
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_double
 
+ # WL human and android with reptilian markings start
+
 - type: marking
   id: LizardTailSmooth
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian]
+  speciesRestriction: [Reptilian, Human, Android]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: tail_smooth_primary
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: tail_smooth_secondary
+
+ # WL human and android with reptilian markings end
 
 - type: marking
   id: LizardTailLarge
@@ -287,11 +295,13 @@
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: r_leg_tiger
 
+ # WL human and android with reptilian markings start
+
 - type: marking
   id: LizardHornsArgali
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Cischi]
+  speciesRestriction: [Reptilian, Cischi, Human, Android]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_argali
@@ -300,7 +310,7 @@
   id: LizardHornsAyrshire
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Cischi]
+  speciesRestriction: [Reptilian, Cischi, Human, Android]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_ayrshire
@@ -309,7 +319,7 @@
   id: LizardHornsMyrsore
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Cischi]
+  speciesRestriction: [Reptilian, Cischi, Human, Android]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_myrsore
@@ -318,7 +328,7 @@
   id: LizardHornsBighorn
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Cischi]
+  speciesRestriction: [Reptilian, Cischi, Human, Android]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_bighorn
@@ -327,10 +337,12 @@
   id: LizardHornsDemonic
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  speciesRestriction: [Reptilian, Human, Android]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_demonic
+
+ # WL human and android with reptilian markings end
 
 - type: marking
   id: LizardHornsKoboldEars
