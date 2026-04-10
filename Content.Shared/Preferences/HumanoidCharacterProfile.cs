@@ -181,7 +181,7 @@ namespace Content.Shared.Preferences
             OocText = ooctext; // WL-OOCText
             Species = species;
             Voice = voice; // Corvax-TTS
-            Age = age; // WL-Height
+            Age = age;
             Height = height; // WL-Heigh
             Sex = sex;
             Gender = gender;
@@ -227,7 +227,7 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile(HumanoidCharacterProfile other)
             : this(other.Name,
                 other.FlavorText,
-                other.OocText, // WL-Heigh
+                other.OocText, // WL-OOC
                 other.Species,
                 other.Voice,
                 other.Age,
@@ -670,7 +670,7 @@ namespace Content.Shared.Preferences
             if (OocText != other.OocText) return false; // WL-OocText
             if (Sex != other.Sex) return false;
             // WL-Changes-start
-            if (FlavorText != other.FlavorText) return false; 
+            if (FlavorText != other.FlavorText) return false;
             if (MedicalRecord != other.MedicalRecord) return false;
             if (SecurityRecord != other.SecurityRecord) return false;
             if (EmploymentRecord != other.EmploymentRecord) return false;

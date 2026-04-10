@@ -1,8 +1,10 @@
+using System.Numerics;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Preferences;
+using Content.Shared.Sprite;
 using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Prototypes;
 
@@ -12,6 +14,7 @@ public sealed class HumanoidProfileSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly GrammarSystem _grammar = default!;
+    [Dependency] private readonly SharedScaleVisualsSystem _scale = default!; // WL-Changes
 
     // Corvax-TTS-Start
     public const string DefaultVoice = "Garithos";
@@ -22,6 +25,10 @@ public sealed class HumanoidProfileSystem : EntitySystem
         {Sex.Unsexed, "Myron"},
     };
     // Corvax-TTS-End
+    // WL-Height-Start
+    public const float MaxHeightScale = 100f;
+    public const float MinHeightScale = 0.1f;
+    // WL-Height-End
 
     public override void Initialize()
     {
@@ -46,6 +53,10 @@ public sealed class HumanoidProfileSystem : EntitySystem
             _TTSComponent.VoicePrototypeId = profile.Voice;
         }
         // Corvax-TTS-end
+        //Wl-Changes: Height start
+        ent.Comp.Height = profile.Height;
+        ApplyHeight(ent);
+        //Wl-Changes: Height end
         Dirty(ent);
 
         var sexChanged = new SexChangedEvent(ent.Comp.Sex, profile.Sex);
@@ -62,9 +73,31 @@ public sealed class HumanoidProfileSystem : EntitySystem
         var identity = Identity.Entity(ent, EntityManager);
         var species = GetSpeciesRepresentation(ent.Comp.Species).ToLower();
         var age = GetAgeRepresentation(ent.Comp.Species, ent.Comp.Age);
+        var height = GetHeightRepresentation(ent.Comp.Height); // WL-Height
 
-        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));
+        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("height", height), ("species", species)));
     }
+
+    // WL-Height-Start
+    public void ApplyHeight(Entity<HumanoidProfileComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return;
+
+        var scale = System.Math.Min(System.Math.Max(ent.Comp.Height / 165f, MinHeightScale), MaxHeightScale);
+        _scale.SetSpriteScale(ent, new Vector2(scale));
+    }
+
+    public void SetHeight(Entity<HumanoidProfileComponent?> ent, int height)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return;
+
+        ent.Comp.Height = height;
+        Dirty(ent, ent.Comp);
+        ApplyHeight(ent);
+    }
+    // WL-Height-End
 
     /// <summary>
     /// Takes ID of the species prototype, returns UI-friendly name of the species.
@@ -101,4 +134,11 @@ public sealed class HumanoidProfileSystem : EntitySystem
 
         return Loc.GetString("identity-age-old");
     }
+
+    // WL-Height-Start
+    public string GetHeightRepresentation(int height)
+    {
+        return Loc.GetString("identity-height", ("height", MathF.Round(height / 10f) * 10));
+    }
+    // WL-Height-End
 }

@@ -1,83 +1,91 @@
-## Role Loadouts
-
+# Medical
 - type: roleLoadout
   id: JobChiefMedicalOfficer
   groups:
-  - Inventory # Corvax-Loadouts
+  # - Inventory # Corvax-Loadouts #Corvax-WL-Remove
   - GroupTankHarness
   - ChiefMedicalOfficerHead
   - MedicalMask
   - ChiefMedicalOfficerJumpsuit
+  - MedicalGloves
   - MedicalBackpack
   - ChiefMedicalOfficerOuterClothing
   - ChiefMedicalOfficerNeck
   - ChiefMedicalOfficerShoes
-  - Glasses
+  - MedicalEyewear
   - SurvivalMedical
   - Trinkets
-#  - ChiefMedicalOfficerJobTrinkets
+  - WLNeck # WL-Changes: Neck add
+  # - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobMedicalDoctor
   groups:
-  - Inventory # Corvax-Loadouts
+  # - Inventory # Corvax-Loadouts #Corvax-WL-Remove
   - GroupTankHarness
   - MedicalDoctorHead
   - MedicalMask
   - MedicalDoctorJumpsuit
+  - MedicalGloves
   - MedicalBackpack
   - MedicalDoctorOuterClothing
   - MedicalShoes
   - MedicalDoctorPDA
-  - Glasses
+  - MedicalEyewear
   - SurvivalMedical
   - Trinkets
-#  - MedicalDoctorJobTrinkets
+  - WLNeck # WL-Changes: Neck add
+  - MedicalDoctorNeck # WL-Changes
+  # - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobMedicalIntern
   groups:
-  - Inventory # Corvax-Loadouts
+  # - Inventory # Corvax-Loadouts #Corvax-WL-Remove
   - GroupTankHarness
   - MedicalInternJumpsuit
   - MedicalBackpack
-  - Glasses
+  - MedicalEyewear
   - SurvivalMedical
   - Trinkets
-#  - MedicalInternJobTrinkets
+  - WLNeck # WL-Changes: Neck add
+  # - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobChemist
   groups:
-  - Inventory # Corvax-Loadouts
+  # - Inventory # Corvax-Loadouts #Corvax-WL-Remove
   - GroupTankHarness
   - MedicalMask
   - ChemistJumpsuit
+  - MedicalGloves
   - ChemistBackpack
   - ChemistOuterClothing
   - MedicalShoes
-  - Glasses
   - SurvivalMedical
   - Trinkets
-#  - ChemistJobTrinkets
+  - WLNeck # WL-Changes: Neck add
+  # - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobParamedic
   groups:
-  - Inventory # Corvax-Loadouts
+  # - Inventory # Corvax-Loadouts #Corvax-WL-Remove
   - GroupTankHarness
   - ParamedicHead
   - MedicalMask
   - ParamedicJumpsuit
+  - MedicalGloves
   - MedicalBackpack
   - ParamedicOuterClothing
   - ParamedicShoes
-  - Glasses
+  - MedicalEyewear
   - SurvivalMedical
   - Trinkets
-#  - ParamedicJobTrinkets
+  - WLNeck # WL-Changes: Neck add
+  # - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical

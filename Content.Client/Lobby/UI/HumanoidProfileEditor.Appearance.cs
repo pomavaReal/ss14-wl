@@ -192,6 +192,7 @@ public sealed partial class HumanoidProfileEditor
         RefreshJobs();
         // In case there's species restrictions for loadouts
         RefreshLoadouts();
+        RefreshSkills(); // WL-Skills
         UpdateSexControls(); // update sex for new species
         UpdateSpeciesGuidebookIcon();
         ReloadPreview();
@@ -201,6 +202,7 @@ public sealed partial class HumanoidProfileEditor
     {
         Profile = Profile?.WithAge(newAge);
         ReloadPreview();
+        RefreshSkills(); // WL-Skills
     }
 
     private void SetSex(Sex newSex)

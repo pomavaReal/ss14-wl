@@ -74,9 +74,8 @@ public sealed partial class ServerApi : IPostInjectInit
     [Dependency] private readonly IPlayerLocator _locator = default!;
     [Dependency] private readonly IBanManager _bans = default!;
     [Dependency] private readonly IServerDbManager _db = default!;
-    
+
     //WL-Changes-start
-    [Dependency] private readonly IServerDbManager _serverDb = default!;
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
     [Dependency] private readonly IBaseServer _baseServer = default!;
     //WL-Changes-end
@@ -243,7 +242,7 @@ public sealed partial class ServerApi : IPostInjectInit
 
         await RunOnMainThread(async () =>
         {
-            var linked = await _serverDb.GetPlayerByDiscordId(http_body.DiscordId, default);
+            var linked = await _db.GetPlayerByDiscordId(http_body.DiscordId, default);
             if (linked == null)
             {
                 await RespondError(context, ErrorCode.PlayerNotFound, HttpStatusCode.BadRequest, "Текущий аккаунт не привязан к игровому аккаунту!");
@@ -280,13 +279,13 @@ public sealed partial class ServerApi : IPostInjectInit
                 return;
             }
 
-            //if (await _serverDb.IsLinkedToDiscord(session.UserId, default))
+            //if (await _db.IsLinkedToDiscord(session.UserId, default))
             //{
             //    await RespondBadRequest(context, "Текущий игровой аккаунт уже привязан к дискорд-аккаунту!");
             //    return;
             //}
 
-            if (await _serverDb.GetPlayerDiscordId(session.UserId, default) != null)
+            if (await _db.GetPlayerDiscordId(session.UserId, default) != null)
             {
                 await RespondBadRequest(context, "Текущий игровой аккаунт уже привязан к дискорд-аккаунту!");
                 return;
@@ -305,7 +304,7 @@ public sealed partial class ServerApi : IPostInjectInit
                 return;
             }
 
-            await _serverDb.LinkPlayerDiscord(session.UserId, discord_user_id, default);
+            await _db.LinkPlayerDiscord(session.UserId, discord_user_id, default);
 
             _sawmill.Info($"Игрок {session.Name} подключил к игровому аккаунту дискорд-аккаунт с ID {discord_user_id}.");
 
@@ -900,7 +899,6 @@ public sealed partial class ServerApi : IPostInjectInit
         Actor? actorData;
         try
         {
-            //WL-Changes-start
             var innerActorData = JsonSerializer.Deserialize<InnerActor>(actor);
             if (innerActorData == null)
             {
@@ -908,6 +906,9 @@ public sealed partial class ServerApi : IPostInjectInit
                 return null;
             }
 
+            //WL-Changes-start
+            actorData = JsonSerializer.Deserialize<Actor>(actor);
+            /*
             if (StuffBotIds.Contains(innerActorData.DiscordId))
             {
                 return new Actor()
@@ -918,7 +919,7 @@ public sealed partial class ServerApi : IPostInjectInit
                 };
             }
 
-            var record = await _serverDb.GetPlayerByDiscordId(innerActorData.DiscordId, default);
+            var record = await _db.GetPlayerByDiscordId(innerActorData.DiscordId, default);
             if (record == null)
             {
                 await RespondBadRequest(context, "Текущий дискорд-аккаунт не привязан к игровому аккаунту!");
@@ -926,6 +927,7 @@ public sealed partial class ServerApi : IPostInjectInit
             }
 
             actorData = new() { Record = record, DiscordId = innerActorData.DiscordId, IsStuffBot = false };
+            */
             //WL-Changes-end
         }
         catch (JsonException exception)
@@ -945,7 +947,7 @@ public sealed partial class ServerApi : IPostInjectInit
 
     public async Task<bool> IsAdmin(NetUserId user, CancellationToken cancel = default)
     {
-        var data = await _serverDb.GetAdminDataForAsync(user, cancel);
+        var data = await _db.GetAdminDataForAsync(user, cancel);
         if (data == null)
             return false;
 
@@ -959,7 +961,7 @@ public sealed partial class ServerApi : IPostInjectInit
 
     public async Task<bool> CheckAdminFlags(NetUserId userId, AdminFlags query_flags, CancellationToken cancel = default)
     {
-        var data = await _serverDb.GetAdminDataForAsync(userId, cancel);
+        var data = await _db.GetAdminDataForAsync(userId, cancel);
         if (data == null)
             return false;
 
@@ -973,6 +975,8 @@ public sealed partial class ServerApi : IPostInjectInit
 
     private sealed class Actor
     {
+        public required Guid Guid { get; init; }
+        public required string Name { get; init; }
         //WL-Changes-start
         public required PlayerRecord Record { get; init; }
         public required ulong DiscordId { get; init; }

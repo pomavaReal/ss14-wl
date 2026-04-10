@@ -185,6 +185,14 @@
       295: 0.8
       285: 0.7
   - type: Wagging
+  #WL-Changes: Languages start
+  - type: Languages
+    speaking:
+      - Translate
+    understood:
+      - Translate
+    specieLanguage: SintaUnati
+  #WL-Changes: Languages end
 
 - type: entity
   parent: OrganBase

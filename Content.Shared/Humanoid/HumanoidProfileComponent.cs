@@ -30,4 +30,9 @@ public sealed partial class HumanoidProfileComponent : Component
     [DataField("voice")]
     public ProtoId<TTSVoicePrototype> Voice { get; set; } = HumanoidProfileSystem.DefaultVoice;
     // Corvax-TTS-End
+
+    // WL-Height-Start
+    [DataField("height")]
+    [ViewVariables] public int Height = 165;
+    // WL-Height-End
 }

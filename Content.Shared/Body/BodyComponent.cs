@@ -8,7 +8,7 @@ namespace Content.Shared.Body;
 /// </summary>
 /// <seealso cref="BodySystem" />
 /// <seealso cref="SharedVisualBodySystem" />
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 [Access(typeof(BodySystem))]
 public sealed partial class BodyComponent : Component
 {
@@ -19,6 +19,11 @@ public sealed partial class BodyComponent : Component
     /// </summary>
     [ViewVariables]
     public Container? Organs;
+
+    // WD EDIT START
+    [DataField, AutoNetworkedField]
+    public bool ThermalVisibility = true;
+    // WD EDIT END
 }
 
 /// <summary>

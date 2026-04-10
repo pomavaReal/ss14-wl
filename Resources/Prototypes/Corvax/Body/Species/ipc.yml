@@ -85,6 +85,7 @@
   id: MobIpc
   name: Urist McHands
   components:
+  - type: CharacterInformation
   - type: Damageable
     damageContainer: SiliconIpc
     damageModifierSet: Ipc
@@ -139,6 +140,8 @@
         type: StrippableBoundUserInterface
       enum.IpcFaceUiKey.Face:
         type: IpcFaceUserInterface
+      enum.CharacterInformationUiKey.Key: # WL-CharacterInformation
+        type: CharacterInformationBoundUserInterface
   - type: InteractionPopup
     successChance: 1
     interactSuccessString: hugging-success-generic
@@ -263,6 +266,16 @@
     shiveringHeatRegulation: 2000
     normalBodyTemperature: 310.15
     thermalRegulationTemperatureThreshold: 2
+  #WL-Changes: Languages start
+  - type: Languages
+    speaking:
+      - Translate
+    understood:
+      - Translate
+    specieLanguage: Ternary
+  #WL-Changes: Languages end
+  - type: MobCollision # WL-Changes: MobCollision works for players only
+  - type: OfferItem # CorvaxGoob-Offer
 
 - type: entity
   parent: OrganBase

@@ -4,7 +4,7 @@
   id: BaseMobGolem
   parent:
   - MobFlammable
-  - BaseMobSpecies
+  - BaseSpeciesMob
   abstract: true
   components:
     - type: OfferItem # CorvaxGoob-Offer
@@ -93,8 +93,6 @@
       - Muted
       - ForcedSleep
       - StaminaModifier
-    - type: HumanoidAppearance
-      species: Golem
     - type: Body
       prototype: Golem
       requiredLegs: 2
@@ -248,37 +246,3 @@
         - Translate
       understood:
         - Translate
-
-- type: entity
-  save: false
-  name: Golem Dummy
-  id: MobGolemDummy
-  parent: BaseSpeciesDummy
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: HumanoidAppearance
-      species: Golem
-    - type: Inventory
-      speciesId: reptilian
-      femaleDisplacements:
-        jumpsuit:
-          sizeMaps:
-            32:
-              sprite: Corvax/Mobs/Species/displacement.rsi
-              state: jumpsuit-female
-        shoes:
-          sizeMaps:
-            32:
-              sprite: Corvax/Mobs/Species/displacement.rsi
-              state: shoes
-      displacements:
-        jumpsuit:
-          sizeMaps:
-            32:
-              sprite: Corvax/Mobs/Species/displacement.rsi
-              state: jumpsuit
-        shoes:
-          sizeMaps:
-            32:
-              sprite: Corvax/Mobs/Species/displacement.rsi
-              state: shoes

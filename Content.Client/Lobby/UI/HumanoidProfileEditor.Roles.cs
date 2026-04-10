@@ -24,7 +24,7 @@ public sealed partial class HumanoidProfileEditor
     // One at a time.
     private LoadoutWindow? _loadoutWindow;
 
-    private List<(string, RequirementsSelector)> _jobPriorities = new();
+    private List<(string, SubnameSelector, RequirementsSelector)> _jobPriorities = new(); //WL-changes
 
     private readonly Dictionary<string, BoxContainer> _jobCategories;
 
@@ -33,7 +33,7 @@ public sealed partial class HumanoidProfileEditor
     /// </summary>
     private void UpdateJobPriorities()
     {
-        foreach (var (jobId, prioritySelector) in _jobPriorities)
+        foreach (var (jobId, _, prioritySelector) in _jobPriorities) //WL-Changes
         {
             var priority = Profile?.JobPriorities.GetValueOrDefault(jobId, JobPriority.Never) ?? JobPriority.Never;
             prioritySelector.Select((int)priority);
@@ -211,7 +211,7 @@ public sealed partial class HumanoidProfileEditor
 
                 if (!_requirements.IsAllowed(job, (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, out var reason))
                 {
-                    selector.LockRequirements(reason);
+                    selector.LockRequirements(JobRequirements.JoinReasons(reasons)); // WL-Changes
                 }
                 else
                 {
@@ -223,7 +223,7 @@ public sealed partial class HumanoidProfileEditor
                     var selectedJobPrio = (JobPriority)selectedPrio;
                     Profile = Profile?.WithJobPriority(job.ID, selectedJobPrio);
 
-                    foreach (var (jobId, other) in _jobPriorities)
+                    foreach (var (jobId, _, other) in _jobPriorities)
                     {
                         // Sync other selectors with the same job in case of multiple department jobs
                         if (jobId == job.ID)
@@ -247,6 +247,29 @@ public sealed partial class HumanoidProfileEditor
                     SetDirty();
                 };
 
+                var gender = Profile?.Gender ?? Gender.Male; //WL-Changes
+                var subnameSelector = new SubnameSelector(job, gender); //WL-Changes
+
+                //WL-Changes-start
+                subnameSelector.SubnameChanged += (id, subname, isSilent) =>
+                {
+                    Profile = Profile?.WithJobSubname(job.ID, subname);
+
+                    if (!isSilent)
+                    {
+                        SetDirty();
+                    }
+                };
+
+                if (Profile?.JobSubnames.TryGetValue(job.ID, out var subname) == true)
+                {
+                    if (job.GetSubnames(gender).Contains(subname))
+                        subnameSelector.SelectItem(subname, true);
+                    else subnameSelector.SelectItem(job.LocalizedName, true);
+                }
+
+                selector.Setup(items, subnameSelector, 200, job.LocalizedDescription, icon, job.Guides);
+
                 var loadoutWindowBtn = new Button()
                 {
                     Text = Loc.GetString("loadout-window"),
@@ -254,6 +277,17 @@ public sealed partial class HumanoidProfileEditor
                     VerticalAlignment = VAlignment.Center,
                     Margin = new Thickness(3f, 3f, 0f, 0f),
                 };
+
+                // WL-Skills-start
+                var skillsWindowBtn = new Button()
+                {
+                    Text = Loc.GetString("skill-window"),
+                    HorizontalAlignment = HAlignment.Right,
+                    VerticalAlignment = VAlignment.Center,
+                    Margin = new Thickness(3f, 3f, 0f, 0f),
+                    ToolTip = Loc.GetString("skill-window-tooltip")
+                };
+                // WL-Skills-end
 
                 var collection = IoCManager.Instance!;
                 var protoManager = collection.Resolve<IPrototypeManager>();
@@ -284,9 +318,26 @@ public sealed partial class HumanoidProfileEditor
                     };
                 }
 
+                // WL-Skills-start
+                skillsWindowBtn.OnPressed += args =>
+                {
+                    OpenSkills(job);
+                };
+                // WL-Skills-end
+
+
+                // WL-Skills-Edit-start
+                var buttonsContainer = new BoxContainer
+                {
+                    Orientation = LayoutOrientation.Horizontal,
+                    HorizontalAlignment = HAlignment.Right
+                };
+                buttonsContainer.AddChild(loadoutWindowBtn);
+                buttonsContainer.AddChild(skillsWindowBtn);
+
+                jobContainer.AddChild(buttonsContainer);
+                // WL-Skills-Edit-end
                 _jobPriorities.Add((job.ID, selector));
-                jobContainer.AddChild(selector);
-                jobContainer.AddChild(loadoutWindowBtn);
                 category.AddChild(jobContainer);
             }
         }
@@ -321,7 +372,7 @@ public sealed partial class HumanoidProfileEditor
 
             var title = Loc.GetString(antag.Name);
             var description = Loc.GetString(antag.Objective);
-            selector.Setup(items, title, 250, description, guides: antag.Guides);
+            selector.Setup(items, new Label() { Text = title }, 250, description, guides: antag.Guides); //WL-Changes
             selector.Select(Profile?.AntagPreferences.Contains(antag.ID) == true ? 0 : 1);
 
             if (!_requirements.IsAllowed(
@@ -329,7 +380,7 @@ public sealed partial class HumanoidProfileEditor
                     (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter,
                     out var reason))
             {
-                selector.LockRequirements(reason);
+                selector.LockRequirements(JobRequirements.JoinReasons(reasons)); // WL-Changes
                 Profile = Profile?.WithAntagPreference(antag.ID, false);
                 SetDirty();
             }

@@ -16,8 +16,7 @@
         - !type:MetabolizerTypeCondition
           type: [ Golem ]
         damage:
-          groups:
-            Brute: -3
+          Brute: -3
 
 - type: reagent
   id: Carbon
@@ -96,8 +95,7 @@
         - !type:MetabolizerTypeCondition
           type: [ Golem ]
         damage:
-          groups:
-            Brute: -3
+          Brute: -3
 
 - type: reagent
   id: Fluorine
@@ -144,8 +142,7 @@
         - !type:MetabolizerTypeCondition
           type: [ Golem ]
         damage:
-          groups:
-            Brute: -3
+          Brute: -3
     Food:
       effects:
       - !type:SatiateHunger
@@ -224,8 +221,7 @@
         - !type:MetabolizerTypeCondition
           type: [ Golem ]
         damage:
-          groups:
-            Brute: -3
+          Brute: -3
 
 - type: reagent
   id: Lithium
@@ -293,8 +289,7 @@
         - !type:MetabolizerTypeCondition
           type: [ Golem ]
         damage:
-          groups:
-            Burn: -0.75
+          Burn: -0.75
           types:
             Caustic: -0.125
 
@@ -384,8 +379,7 @@
         - !type:MetabolizerTypeCondition
           type: [ Golem ]
         damage:
-          groups:
-            Brute: -3
+          Brute: -3
     Food:
       effects:
       - !type:SatiateHunger
@@ -495,5 +489,4 @@
         - !type:MetabolizerTypeCondition
           type: [ Golem ]
         damage:
-          groups:
-            Brute: -3
+          Brute: -3

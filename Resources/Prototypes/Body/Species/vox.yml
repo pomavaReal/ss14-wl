@@ -252,6 +252,14 @@
       types:
         Slash: 5 # Reduce?
   - type: Wagging
+  #WL-Changes: Languages start
+  - type: Languages
+    speaking:
+      - Translate
+    understood:
+      - Translate
+    specieLanguage: VoxPigin
+  #WL-Changes: Languages end
 
 - type: entity
   parent: OrganBase

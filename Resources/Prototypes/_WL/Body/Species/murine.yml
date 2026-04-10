@@ -1,18 +1,10 @@
 - type: entity
   save: false
   name: Urist McMurine
-  parent: [ BaseMobSpeciesOrganic ]
+  parent: [ BaseSpeciesMobOrganic ]
   id: BaseMobHumanoidMurine
   abstract: true
   components:
-  - type: HumanoidAppearance
-    species: Murine
-    hideLayersOnEquip:
-    - Hair
-    - Snout
-    - FacialHair
-    - HeadTop
-    - HeadSide
   - type: Body
     prototype: HumanoidMurine
     requiredLegs: 2
@@ -67,13 +59,3 @@
     specieLanguage: Urlum
   - type: AddHeightItem
 
-- type: entity
-  save: false
-  name: Urist McMurine
-  parent: BaseSpeciesDummy
-  id: MobHumanoidMurineDummy
-  categories: [ HideSpawnMenu ]
-  description: A dummy vulp meant to be used in character setup.
-  components:
-  - type: HumanoidAppearance
-    species: Murine

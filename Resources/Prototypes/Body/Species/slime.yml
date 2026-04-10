@@ -106,6 +106,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.CharacterInformationUiKey.Key: # WL-CharacterInformation
+        type: CharacterInformationBoundUserInterface
   - type: UseDelay
     delay: 0.5
   - type: Speech
@@ -181,6 +183,14 @@
       types:
         Asphyxiation: -1.0
     maxSaturation: 15
+  #WL-Changes: Languages start
+  - type: Languages
+    speaking:
+      - Translate
+    understood:
+      - Translate
+    specieLanguage: Slimish
+  #WL-Changes: Languages end
 
 - type: entity
   parent: OrganBase

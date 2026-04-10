@@ -93,6 +93,14 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
+  #WL-Changes: Languages start
+  - type: Languages
+    speaking:
+      - Translate
+    understood:
+      - Translate
+    specieLanguage: OldEarth
+  #WL-Changes: Languages end
 
 - type: entity
   parent: OrganBase
@@ -141,6 +149,7 @@
     hideableLayers:
     - enum.HumanoidVisualLayers.Hair
     - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.FacialHair # WL-Changes
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganHumanExternal ]

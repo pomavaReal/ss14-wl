@@ -157,6 +157,14 @@
       types:
         Asphyxiation: -2.0
   - type: Wagging
+  # WL-Changes: Languages
+  - type: Languages
+    speaking:
+      - Translate
+    understood:
+      - Translate
+    specieLanguage: SikTair
+  # WL-Changes: Languages
 
 - type: entity
   parent: OrganBase

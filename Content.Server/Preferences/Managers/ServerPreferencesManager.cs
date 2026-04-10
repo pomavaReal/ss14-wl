@@ -93,6 +93,11 @@ namespace Content.Server.Preferences.Managers
 
         internal HumanoidCharacterProfile ConvertProfiles(Profile profile)
         {
+            //WL-Changes-start
+            var jobSubnames = profile.JobSubnames.ToDictionary(x => x.JobName, x => x.Subname);
+            var jobUnblockings = profile.JobUnblockings.ToDictionary(k => k.JobName, v => v.ForceUnblocked);
+            var jobSkills = profile.JobSkills.ToDictionary(js => js.JobName, js => js.Skills);
+            //WL-Changes-end
 
             var jobs = profile.Jobs.ToDictionary(j => new ProtoId<JobPrototype>(j.JobName), j => (JobPriority) j.Priority);
             var antags = profile.Antags.Select(a => new ProtoId<AntagPrototype>(a.AntagName));
@@ -178,9 +183,11 @@ namespace Content.Server.Preferences.Managers
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
+                profile.OocText, // WL-OOCText
                 species,
                 voice, // Corvax-TTS
                 profile.Age,
+                profile.Height, // WL-Heights
                 sex,
                 gender,
                 new HumanoidCharacterAppearance
@@ -192,9 +199,19 @@ namespace Content.Server.Preferences.Managers
                 spawnPriority,
                 jobs,
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
+                jobSubnames,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts
+                loadouts,
+                jobUnblockings,
+                profile.MedicalRecord, // WL-Records
+                profile.SecurityRecord, // WL-Records
+                profile.EmploymentRecord, // WL-Records
+                profile.FullName, // WL-Records
+                profile.DateOfBirth, // WL-Records
+                profile.Confederation, // WL-Records
+                profile.Country, // WL-Records
+                jobSkills // WL-Skills
             );
         }
 

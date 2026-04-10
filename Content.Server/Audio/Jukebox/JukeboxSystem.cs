@@ -9,6 +9,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Audio.Systems;
 
 namespace Content.Server.Audio.Jukebox;
 
@@ -245,8 +246,9 @@ public sealed partial class JukeboxSystem : SharedJukeboxSystem
         if (Exists(ent.Comp.AudioStream))
         {
             Audio.SetState(ent.Comp.AudioStream, AudioState.Playing);
+            return true;
         }
-        
+
         // WL-Changes: Jukebox tweaks start
         else
         {
@@ -257,7 +259,8 @@ public sealed partial class JukeboxSystem : SharedJukeboxSystem
             }
 
             ent.Comp.AudioStream = Audio.Stop(ent.Comp.AudioStream);
-            StartPlaying(uid, ent.Comp);
+            StartPlaying(ent, ent.Comp);
+            return true;
         }
         // WL-Changes: Jukebox tweaks end
     }

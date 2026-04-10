@@ -26,6 +26,10 @@ public sealed partial class HumanoidProfileEditor
             _flavorTextEdit = _flavorText.CFlavorTextInput;
 
             _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
+
+            _oocTextEdit = _flavorText.COocTextInput; // WL-OOCText
+
+            _flavorText.OnOocTextChanged += OnOocTextChange; // WL-OOCText
         }
         else
         {

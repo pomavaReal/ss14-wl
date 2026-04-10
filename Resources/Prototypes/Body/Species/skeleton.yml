@@ -155,7 +155,8 @@
           messages: [ "skeleton-sprayed-by-oat-milk-popup" ]
           probability: 0.5
   - type: FireVisuals
-    alternateState: Standing
+    normalState: human_small_fire # Corvax WL /tg/ resprite
+    alternateState: human_big_fire # Corvax WL /tg/ resprite
   - type: FlashImmunity
     showInExamine: false
   - type: Instrument
@@ -181,6 +182,15 @@
     interactSuccessString: hugging-success-generic
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
+  - type: InitialSkills # WL-Skills
+    randomizeAllSkills: true # WL-Skills
+  #WL-Changes: Languages start
+  - type: Languages
+    speaking:
+      - Translate
+    understood:
+      - Translate
+  #WL-Changes: Languages end
 
 - type: entity
   parent: OrganBase

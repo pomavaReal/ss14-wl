@@ -243,6 +243,14 @@
       types:
         Asphyxiation: -2.0
   # Corvax-Vulp_Port end
+# WL-Changes: Languages start
+  - type: Languages
+    speaking:
+      - Translate
+    understood:
+      - Translate
+    specieLanguage: Kuniluc
+# WL-Changes: Languages end
 
 - type: entity
   parent: OrganBase

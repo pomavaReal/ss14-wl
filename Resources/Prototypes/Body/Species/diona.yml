@@ -171,6 +171,14 @@
     allowedStates:
     - Dead
   - type: Rootable
+  #WL-Changes: Languages start
+  - type: Languages
+    speaking:
+      - Translate
+    understood:
+      - Translate
+    specieLanguage: RootSpeak
+  #WL-Changes: Languages end
 
 - type: entity
   parent: OrganBase

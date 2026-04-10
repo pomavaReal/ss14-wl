@@ -52,11 +52,20 @@ public sealed partial class HumanoidCharacterProfileV1
     [DataField("_loadouts")]
     public Dictionary<string, RoleLoadout> Loadouts = new();
 
+    [DataField("_jobSubnames")]
+    public Dictionary<string, string> JobSubnames = new();
+
+    [DataField("_jobUnblockings")]
+    public Dictionary<string, bool> JobUnblockings = new();
+
     [DataField]
     public string Name;
 
     [DataField]
     public string FlavorText;
+
+    [DataField]
+    public string OocText; //WL-Changes: OOC text
 
     [DataField]
     public ProtoId<SpeciesPrototype> Species;
@@ -66,6 +75,9 @@ public sealed partial class HumanoidCharacterProfileV1
 
     [DataField]
     public int Age;
+
+    [DataField]
+    public int Height; //WL-Changes: Height
 
     [DataField]
     public Sex Sex;
@@ -82,9 +94,35 @@ public sealed partial class HumanoidCharacterProfileV1
     [DataField]
     public PreferenceUnavailableMode PreferenceUnavailable;
 
+    //WL-Changes: Records start
+    [DataField]
+    public string MedicalRecord;
+
+    [DataField]
+    public string SecurityRecord;
+
+    [DataField]
+    public string EmploymentRecord;
+
+    [DataField]
+    public string FullName;
+
+    [DataField]
+    public string DateOfBirth;
+
+    [DataField]
+    public string Confederation;
+
+    [DataField]
+    public string Country;
+
+    [DataField("skills")]
+    public Dictionary<string, Dictionary<byte, int>> Skills = new();
+
+    //WL-Changes: Records end
     public HumanoidCharacterProfile ToV2()
     {
-        return new(Name, FlavorText, Species, Voice, Age, Sex, Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts);
+        return new(Name, FlavorText, OocText, Species, Voice, Age, Height, Sex, Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, JobSubnames, AntagPreferences, TraitPreferences, Loadouts, JobUnblockings, MedicalRecord, SecurityRecord, EmploymentRecord, FullName, DateOfBirth, Confederation, Country, Skills);
     }
 }
 

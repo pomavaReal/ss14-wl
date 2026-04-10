@@ -11,3 +11,7 @@
   maleLastNames: NamesVulpLast # Corvax-LastnameGender
   femaleLastNames: NamesVulpLast # Corvax-LastnameGender
   #lastNames: names_vulpkanin_last
+  # WL-Changes-start: Height
+  minHeight: 140
+  maxHeight: 185
+  # WL-Changes-end: Height
