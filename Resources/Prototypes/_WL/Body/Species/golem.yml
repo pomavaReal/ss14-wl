@@ -8,6 +8,10 @@
     enum.HumanoidVisualLayers.HeadTop:
       limit: 1
       required: true
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 1
+      required: true
+      defaultMarkings: [GolemBaseHead]
     enum.HumanoidVisualLayers.LArm:
       limit: 2
       required: false
@@ -36,7 +40,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceGolem
-  name: vulpkanin appearance
+  name: golem appearance
   components:
   - type: InitialBody
     organs:

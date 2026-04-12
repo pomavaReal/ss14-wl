@@ -21,6 +21,7 @@
     enum.HumanoidVisualLayers.Tail:
       limit: 1
       required: true
+      defaultMarkings: [ CischiTail ]
     enum.HumanoidVisualLayers.LArm:
       limit: 2
       required: false

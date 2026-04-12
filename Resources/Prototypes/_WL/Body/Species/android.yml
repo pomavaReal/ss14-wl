@@ -51,11 +51,13 @@
     enum.HumanoidVisualLayers.UndergarmentTop:
       limit: 1
       required: false
-      nudityDefault: [ UndergarmentTopTanktopVulpkanin ]
     enum.HumanoidVisualLayers.UndergarmentBottom:
       limit: 1
       required: false
-      nudityDefault: [ UndergarmentBottomBoxersVulpkanin ]
+    enum.HumanoidVisualLayers.Overlay:
+      limit: 1
+      required: true
+      defaultMarkings: [ AndroidSensors ]
 
 - type: entity
   parent: BaseSpeciesAppearance
@@ -86,83 +88,6 @@
       Kidneys: OrganAndroidKidneys
   - type: HumanoidProfile
     species: Android
-  - type: Inventory
-    speciesId: vulpkanin
-#Corvax-Vulp_Port start
-    femaleDisplacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Corvax/Mobs/Species/displacement.rsi
-            state: jumpsuit-female
-      shoes:
-        sizeMaps:
-          32:
-            sprite: Corvax/Mobs/Species/displacement.rsi
-            state: shoes
-    #########
-    displacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Corvax/Mobs/Species/displacement.rsi
-            state: jumpsuit
-      shoes:
-        sizeMaps:
-          32:
-            sprite: Corvax/Mobs/Species/displacement.rsi
-            state: shoes
-      outerClothing:
-        sizeMaps:
-          32:
-            sprite: Corvax/Mobs/Species/displacement.rsi
-            state: outerclothing
-    #  jumpsuit:
-    #    sizeMaps:
-    #      32:
-    #        sprite: Mobs/Species/Vulpkanin/displacement.rsi
-    #        state: jumpsuit
-      back:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: back
-      #outerClothing:
-      #  sizeMaps:
-      #    32:
-      #      sprite: Mobs/Species/Vulpkanin/displacement.rsi
-      #      state: outerwear
-      gloves:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: hand
-      #shoes:
-      #  sizeMaps:
-      #    32:
-      #      sprite: Mobs/Species/Vulpkanin/displacement.rsi
-      #      state: shoes
-#Corvax-Vulp_Port end
-      head:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: head
-      neck:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: neck
-      eyes:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: eyes
-      belt:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: belt
 
 - type: entity
   name: Urist McAndroid

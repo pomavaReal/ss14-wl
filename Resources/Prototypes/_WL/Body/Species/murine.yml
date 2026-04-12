@@ -194,7 +194,7 @@
   id: OrganMurineTorso
 
 - type: entity
-  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganMurineExternal ]
+  parent: [ OrganBaseHead, OrganMurineExternal ]
   id: OrganMurineHead
   components:
   - type: VisualOrganMarkings
