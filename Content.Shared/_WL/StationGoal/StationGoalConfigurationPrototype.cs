@@ -4,7 +4,6 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._WL.StationGoal
 {
     [DataDefinition]
-    [Serializable]
     public sealed partial class StationGoalConfigurationPrototype : IPrototype
     {
         [ViewVariables]

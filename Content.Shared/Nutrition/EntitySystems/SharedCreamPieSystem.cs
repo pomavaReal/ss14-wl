@@ -20,7 +20,6 @@ namespace Content.Shared.Nutrition.EntitySystems
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         // WL Golem species start
         [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-        [Dependency] private readonly IPrototypeManager _prototype = default!;
         [Dependency] private readonly IEntityManager _entity = default!;
         [Dependency] private readonly SharedBuckleSystem _buckle = default!;
         // WL Golem species end

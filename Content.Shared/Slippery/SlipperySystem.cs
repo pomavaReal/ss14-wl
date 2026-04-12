@@ -37,7 +37,6 @@ public sealed class SlipperySystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     // WL Golem species start
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IEntityManager _entity = default!;
     // WL Golem species end
     [Dependency] private readonly SpeedModifierContactsSystem _speedModifier = default!;

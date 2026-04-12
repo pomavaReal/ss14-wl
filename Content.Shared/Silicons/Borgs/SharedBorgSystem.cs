@@ -65,8 +65,9 @@ public abstract partial class SharedBorgSystem : EntitySystem
     [Dependency] private readonly SharedHandheldLightSystem _handheldLight = default!;
     [Dependency] private readonly SharedAccessSystem _access = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-
     [Dependency] private readonly TagSystem _tag = default!; // WL android species
+
+    public const string AndroidBodyTag = "AndroidBodyTag";
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -178,7 +179,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
 
         if (HasComp<BorgBrainComponent>(args.Entity) &&
                 _mind.TryGetMind(args.Entity, out var mindId, out var mind) &&
-                !_tag.HasTag(chassis, "AndroidBodyTag")) //WL-Changes: Androids
+                !_tag.HasTag(chassis, AndroidBodyTag)) //WL-Changes: Androids
         {
             _mind.TransferTo(mindId, chassis.Owner, mind: mind);
         }
@@ -194,7 +195,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
 
         if (HasComp<BorgBrainComponent>(args.Entity) &&
                 _mind.TryGetMind(chassis.Owner, out var mindId, out var mind) &&
-                !_tag.HasTag(chassis, "AndroidBodyTag")) //WL-Changes: Androids
+                !_tag.HasTag(chassis, AndroidBodyTag)) //WL-Changes: Androids
         {
             _mind.TransferTo(mindId, args.Entity, mind: mind);
         }
@@ -330,7 +331,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
         var borg = container.Owner;
 
         // WL-Changes: Androids start
-        if (_tag.HasTag(container.Owner, "AndroidBodyTag"))
+        if (_tag.HasTag(container.Owner, AndroidBodyTag))
             return;
         // WL-Changes: Androids end
 
