@@ -129399,9 +129399,6 @@ entities:
       parent: 2
     - type: Storage
       storedItems:
-        1180:
-          position: 0,1
-          _rotation: East
         1179:
           position: 3,0
           _rotation: South
@@ -129414,7 +129411,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 1180
           - 1179
           - 1181
     - type: Fixtures
@@ -134792,18 +134788,6 @@ entities:
     - type: Transform
       pos: 57.5,55.5
       parent: 2
-- proto: SpawnPointBoxer
-  entities:
-  - uid: 18545
-    components:
-    - type: Transform
-      pos: 50.5,31.5
-      parent: 2
-  - uid: 18546
-    components:
-    - type: Transform
-      pos: 40.5,35.5
-      parent: 2
 - proto: SpawnPointBrigmedic
   entities:
   - uid: 18547
@@ -135329,13 +135313,6 @@ entities:
     components:
     - type: Transform
       pos: 119.5,21.5
-      parent: 2
-- proto: SpawnPointZookeeper
-  entities:
-  - uid: 18632
-    components:
-    - type: Transform
-      pos: 114.5,51.5
       parent: 2
 - proto: SpawnSecDog
   entities:
@@ -143421,72 +143398,6 @@ entities:
     components:
     - type: Transform
       pos: 116.42734,74.49919
-      parent: 2
-- proto: TowelColorDarkBlue
-  entities:
-  - uid: 19877
-    components:
-    - type: Transform
-      pos: 114.51066,80.4346
-      parent: 2
-  - uid: 19878
-    components:
-    - type: Transform
-      pos: 22.449753,52.57804
-      parent: 2
-  - uid: 19879
-    components:
-    - type: Transform
-      pos: 22.668503,52.57804
-      parent: 2
-- proto: TowelColorGreen
-  entities:
-  - uid: 19880
-    components:
-    - type: Transform
-      pos: 84.52016,89.63763
-      parent: 2
-  - uid: 19881
-    components:
-    - type: Transform
-      pos: 84.42641,89.497
-      parent: 2
-- proto: TowelColorLightBlue
-  entities:
-  - uid: 19882
-    components:
-    - type: Transform
-      pos: 76.72897,39.707207
-      parent: 2
-- proto: TowelColorNT
-  entities:
-  - uid: 1180
-    components:
-    - type: Transform
-      parent: 1178
-    - type: Physics
-      canCollide: False
-- proto: TowelColorWhite
-  entities:
-  - uid: 19883
-    components:
-    - type: Transform
-      pos: 76.51022,39.56658
-      parent: 2
-  - uid: 19884
-    components:
-    - type: Transform
-      pos: 42.447098,33.685783
-      parent: 2
-  - uid: 19885
-    components:
-    - type: Transform
-      pos: 42.64501,33.685783
-      parent: 2
-  - uid: 19886
-    components:
-    - type: Transform
-      pos: 42.509598,33.529533
       parent: 2
 - proto: ToyFigurineAtmosTech
   entities:
@@ -161875,29 +161786,6 @@ entities:
       parent: 2
     - type: WarpPoint
       location: Автоматическая Торговая Станция
-- proto: WarpPointBombing
-  entities:
-  - uid: 23175
-    components:
-    - type: MetaData
-      name: медицинские криокапсулы
-    - type: Transform
-      pos: 102.5,74.5
-      parent: 2
-    - type: WarpPoint
-      location: медицинские криокапсулы
-  - uid: 23176
-    components:
-    - type: Transform
-      pos: 129.5,109.5
-      parent: 2
-    - type: WarpPoint
-      location: Торговый Пост
-  - uid: 24540
-    components:
-    - type: Transform
-      pos: 58.5,17.5
-      parent: 2
 - proto: WaterCooler
   entities:
   - uid: 23177

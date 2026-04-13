@@ -2378,13 +2378,6 @@ entities:
     - type: Transform
       pos: 13.585653,9.437982
       parent: 1
-- proto: ClothingNeckCloakMiner
-  entities:
-  - uid: 606
-    components:
-    - type: Transform
-      pos: 18.479916,18.545435
-      parent: 1
 - proto: ClothingNeckSyndicakePin
   entities:
   - uid: 959

@@ -33508,7 +33508,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 2605
           - 2607
           - 2609
           - 4475
@@ -33536,12 +33535,6 @@ entities:
           _rotation: South
         475:
           position: 0,2
-          _rotation: South
-        2605:
-          position: 4,1
-          _rotation: East
-        2606:
-          position: 6,0
           _rotation: South
         2607:
           position: 5,2
@@ -61768,15 +61761,11 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 10931
           - 10930
     - type: Storage
       storedItems:
         10930:
           position: 0,0
-          _rotation: East
-        10931:
-          position: 2,0
           _rotation: East
     - type: Fixtures
       fixtures: {}
@@ -62055,7 +62044,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 10935
           - 10934
           - 11539
     - type: Storage
@@ -62063,12 +62051,6 @@ entities:
         10934:
           position: 0,0
           _rotation: East
-        10935:
-          position: 0,1
-          _rotation: East
-        11539:
-          position: 2,0
-          _rotation: South
     - type: Fixtures
       fixtures: {}
   - uid: 10936
@@ -62082,16 +62064,12 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 10938
           - 10937
           - 11543
     - type: Storage
       storedItems:
         10937:
           position: 0,0
-          _rotation: East
-        10938:
-          position: 0,1
           _rotation: East
         11543:
           position: 2,0
@@ -65965,13 +65943,6 @@ entities:
     - type: Transform
       pos: 49.5,8.5
       parent: 1
-- proto: SpawnPointBoxer
-  entities:
-  - uid: 10699
-    components:
-    - type: Transform
-      pos: 8.5,-50.5
-      parent: 1
 - proto: SpawnPointCaptain
   entities:
   - uid: 10713
@@ -66264,13 +66235,6 @@ entities:
     components:
     - type: Transform
       pos: 24.5,-22.5
-      parent: 1
-- proto: SpawnPointZookeeper
-  entities:
-  - uid: 10708
-    components:
-    - type: Transform
-      pos: 41.5,14.5
       parent: 1
 - proto: SpawnSpellbook
   entities:
@@ -69256,100 +69220,6 @@ entities:
     components:
     - type: Transform
       pos: 37.5572,-95.40834
-      parent: 1
-- proto: TowelColorBlue
-  entities:
-  - uid: 3577
-    components:
-    - type: Transform
-      pos: 4.511339,-59.479908
-      parent: 1
-- proto: TowelColorGold
-  entities:
-  - uid: 8651
-    components:
-    - type: Transform
-      pos: 32.509857,-86.50983
-      parent: 1
-- proto: TowelColorGreen
-  entities:
-  - uid: 3578
-    components:
-    - type: Transform
-      pos: 13.662872,-57.604908
-      parent: 1
-- proto: TowelColorMime
-  entities:
-  - uid: 8650
-    components:
-    - type: Transform
-      pos: 28.50986,-86.38483
-      parent: 1
-- proto: TowelColorNT
-  entities:
-  - uid: 3737
-    components:
-    - type: Transform
-      pos: 16.579815,16.516853
-      parent: 1
-- proto: TowelColorPurple
-  entities:
-  - uid: 10931
-    components:
-    - type: Transform
-      parent: 10929
-    - type: Physics
-      canCollide: False
-- proto: TowelColorRed
-  entities:
-  - uid: 3576
-    components:
-    - type: Transform
-      pos: 12.612527,-49.48468
-      parent: 1
-- proto: TowelColorSyndicate
-  entities:
-  - uid: 2605
-    components:
-    - type: Transform
-      parent: 2599
-    - type: Physics
-      canCollide: False
-- proto: TowelColorWhite
-  entities:
-  - uid: 3739
-    components:
-    - type: Transform
-      pos: 16.172884,16.555134
-      parent: 1
-  - uid: 8883
-    components:
-    - type: Transform
-      pos: 4.7361364,-69.47559
-      parent: 1
-  - uid: 8884
-    components:
-    - type: Transform
-      pos: 4.7673864,-69.31934
-      parent: 1
-  - uid: 10935
-    components:
-    - type: Transform
-      parent: 10933
-    - type: Physics
-      canCollide: False
-  - uid: 10938
-    components:
-    - type: Transform
-      parent: 10936
-    - type: Physics
-      canCollide: False
-- proto: TowelColorYellow
-  entities:
-  - uid: 3554
-    components:
-    - type: Transform
-      pos: 3.368524,-51.09354
       parent: 1
 - proto: ToyFigurineAtmosTech
   entities:

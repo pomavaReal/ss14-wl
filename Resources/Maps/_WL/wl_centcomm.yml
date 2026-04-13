@@ -70820,7 +70820,7 @@ entities:
 
         =============================================
                                [bold]УВЕДОМЛЕНИЕ СОВЕТА ДСО[/bold]
-        ============================================= 
+        =============================================
 
         [bold]Составитель документа:[/bold] 11-21-66-71
 
@@ -70917,7 +70917,7 @@ entities:
 
         =============================================
                                [bold]УВЕДОМЛЕНИЕ СОВЕТА ДСО[/bold]
-        ============================================= 
+        =============================================
 
         [bold]Составитель документа:[/bold] 11-21-66-71
 
@@ -84313,78 +84313,6 @@ entities:
         path: /Audio/Items/jaws_pry.ogg
       qualities:
       - Prying
-- proto: TowelColorCentcom
-  entities:
-  - uid: 7385
-    components:
-    - type: Transform
-      parent: 7384
-    - type: Physics
-      canCollide: False
-  - uid: 8192
-    components:
-    - type: Transform
-      pos: -58.963642,0.61530066
-      parent: 2
-  - uid: 8193
-    components:
-    - type: Transform
-      pos: -66.51221,0.46861267
-      parent: 2
-- proto: TowelColorGold
-  entities:
-  - uid: 7386
-    components:
-    - type: Transform
-      parent: 7384
-    - type: Physics
-      canCollide: False
-- proto: TowelColorGray
-  entities:
-  - uid: 7387
-    components:
-    - type: Transform
-      parent: 7384
-    - type: Physics
-      canCollide: False
-  - uid: 7388
-    components:
-    - type: Transform
-      parent: 7384
-    - type: Physics
-      canCollide: False
-- proto: TowelColorNT
-  entities:
-  - uid: 7389
-    components:
-    - type: Transform
-      parent: 7384
-    - type: Physics
-      canCollide: False
-- proto: TowelColorOrange
-  entities:
-  - uid: 7390
-    components:
-    - type: Transform
-      parent: 7384
-    - type: Physics
-      canCollide: False
-- proto: TowelColorRed
-  entities:
-  - uid: 7391
-    components:
-    - type: Transform
-      parent: 7384
-    - type: Physics
-      canCollide: False
-- proto: TowelColorSilver
-  entities:
-  - uid: 7392
-    components:
-    - type: Transform
-      parent: 7384
-    - type: Physics
-      canCollide: False
 - proto: ToyHonk
   entities:
   - uid: 8194
